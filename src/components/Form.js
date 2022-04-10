@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Form({ todos, setTodos, inputText, setInputText }) {
+  const [disableSubmit, setDisableSubmit] = useState(true);
+
   const inputTextHandler = (e) => {
     console.log(e.target.value);
     setInputText(e.target.value);
@@ -15,15 +17,30 @@ function Form({ todos, setTodos, inputText, setInputText }) {
     ]);
     setInputText("");
   };
+
+  useEffect(() => {
+    if (inputText !== "") {
+      setDisableSubmit(false);
+    } else {
+      setDisableSubmit(true);
+    }
+  }, [inputText]);
+
   return (
     <form>
       <input
+        ref={(input) => input && input.focus()}
         value={inputText}
         onChange={inputTextHandler}
         type="text"
         className="todo-input"
       />
-      <button onClick={submitTodoHandler} className="todo-button" type="submit">
+      <button
+        onClick={submitTodoHandler}
+        className="todo-button"
+        type="submit"
+        disabled={disableSubmit}
+      >
         <i className="fas fa-plus-square"></i>
       </button>
     </form>

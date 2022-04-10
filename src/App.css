@@ -43,6 +43,10 @@ form button:hover {
   align-items: center;
 }
 
+.todo-input:focus {
+  outline: none;
+}
+
 .todo-list {
   min-width: 30%;
   list-style: none;
@@ -131,9 +135,12 @@ select {
   cursor: pointer;
   pointer-events: none;
 }
-/* Transition */
-/*
-.select:hover::after {
-  transform: scale(1.5);
+
+@media only screen and (max-width: 800px) {
+  .App {
+    font-size: 0.75rem;
+  }
+  .todo-input {
+    max-width: 60%;
+  }
 }
-*/
