@@ -2,15 +2,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Source Code Pro", monospace;
 }
+
 body {
-  background-color: #63b4a0;
+  background-color: #292929;
   color: white;
-  font-family: "Poppins", sans-serif;
-  min-height: 100vh;
+  height: 100vh;
 }
-header {
-  font-size: 2rem;
+
+header h1 {
+  font-size: 5rem;
+  font-weight: 500;
 }
 
 header,
@@ -28,13 +31,14 @@ form button {
   background: white;
 }
 form button {
-  color: #63b4a0;
+  color: #555555;
   background: #f7fffe;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 form button:hover {
-  background: #335e53;
+  color: #f7fffe;
+  background: #555555;
   color: white;
 }
 .todo-container {
@@ -71,7 +75,7 @@ form button:hover {
 
 .trash-btn,
 .complete-btn {
-  background: #335e53;
+  background: #555555;
   color: white;
   border: none;
   padding: 1rem;
@@ -79,7 +83,7 @@ form button:hover {
   font-size: 1rem;
 }
 .complete-btn {
-  background: rgb(11, 212, 162);
+  background: #707070;
 }
 .todo-item {
   padding: 0rem 0.5rem;
@@ -100,31 +104,6 @@ form button:hover {
   opacity: 0.5;
 }
 
-/*CUSTOM SELECTOR */
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
-  border: 0 !important;
-  background-image: none;
-}
-
-/* Custom Select */
-.select {
-  margin: 1rem;
-  position: relative;
-  overflow: hidden;
-}
-select {
-  color: #335e53;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-  width: 12rem;
-}
-/* Arrow */
 .select::after {
   content: "\25BC";
   position: absolute;

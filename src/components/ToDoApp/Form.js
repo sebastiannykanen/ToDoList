@@ -4,7 +4,6 @@ function Form({ todos, setTodos, inputText, setInputText }) {
   const [disableSubmit, setDisableSubmit] = useState(true);
 
   const inputTextHandler = (e) => {
-    console.log(e.target.value);
     setInputText(e.target.value);
   };
 

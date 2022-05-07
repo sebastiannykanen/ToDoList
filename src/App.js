@@ -1,18 +1,20 @@
-import React, {useState} from 'react';
-import './App.css';
-import Form from "./components/Form"
-import ToDoList from './components/ToDoList';
+import React, { useEffect } from "react";
+import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ToDoApp from "./components/ToDoApp/ToDoApp";
+import SignUpForm from "./components/SignUp/SignUpForm";
+import LoginForm from "./components/Login/LoginForm";
+import Header from "./components/Header/Header";
 
-function App() {
-  const [inputText, setInputText] = useState("");
-  const [todos, setTodos] = useState([]);
+function App(props) {
   return (
-    <div className="App">
-      <header>
-        <h1>To do list</h1>
-      </header>
-      <Form todos={todos} setTodos={setTodos} inputText={inputText} setInputText={setInputText}/>
-      <ToDoList todos={todos} setTodos={setTodos}/>
+    <div>
+      <BrowserRouter>
+        <Header />
+        <Switch>
+          <Route path="/" exact component={ToDoApp} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
