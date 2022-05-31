@@ -1,13 +1,10 @@
-
 # Todo list - React
 
-Basic calculator built with React. My first ever project with React.
-
+Todo app built with React. My first ever project with React.
 
 ## Tech used
 
 React, CSS
-
 
 ## Features
 
