@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { addDoc } from "firebase/firestore";
 
 function Form({ todos, setTodos, inputText, setInputText }) {
   const [disableSubmit, setDisableSubmit] = useState(true);
-
-  const inputTextHandler = (e) => {
-    setInputText(e.target.value);
-  };
 
   const submitTodoHandler = (e) => {
     // stops page from refreshing
@@ -30,7 +27,7 @@ function Form({ todos, setTodos, inputText, setInputText }) {
       <input
         ref={(input) => input && input.focus()}
         value={inputText}
-        onChange={inputTextHandler}
+        onChange={(e) => setInputText(e.target.value)}
         type="text"
         className="todo-input"
       />

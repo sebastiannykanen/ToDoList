@@ -1,7 +1,7 @@
-import firebase from "firebase/compat/app";
-import "firebase/compat/firestore";
+import { initializeApp } from "firebase/app";
+import { collection, getFirestore, getDocs } from "firebase/firestore";
 
-firebase.initializeApp({
+const firebaseConfig = {
   apiKey: "AIzaSyDL3u8zH4yw-Ax8efu2kUwxV7VqWU87ATU",
   authDomain: "todo-list-dfb3a.firebaseapp.com",
   projectId: "todo-list-dfb3a",
@@ -9,8 +9,13 @@ firebase.initializeApp({
   messagingSenderId: "67630190280",
   appId: "1:67630190280:web:eec6d62102202747639ffd",
   measurementId: "G-7H84VTDXK4",
-});
+};
 
-export const firestore = firebase.firestore();
+// init firebase app
+initializeApp(firebaseConfig);
 
-export default firebase;
+// init services
+export const db = getFirestore();
+
+// collection reference
+export const colRef = collection(db, "todos");
